@@ -1,0 +1,6 @@
+import telnetlib
+
+tn = telnetlib.Telnet("192.168.xx.x", "23")
+tn.write(b"menu\n")
+tn.write(b"0\n")
+print(tn.read_all().decode('ascii'))

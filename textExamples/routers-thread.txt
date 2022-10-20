@@ -1,0 +1,17 @@
+import threading
+from netmiko import ConnectHandler 
+
+def calistir(ip, user, pass): 
+    for i in range(2):
+        device = ConnectHandler(device_type='cisco_ios', ip, user, pass)           
+        output = device.send_command('show ip int brief')
+        print(output)
+
+#t1 = threading.Thread(target=calistir, args = ("thread-1", ))
+#t2 = threading.Thread(target=calistir, args = ("thread-2", ))
+
+t1 = threading.Thread(target=calistir, args=('192.168.xx.x', 'xxxx', 'xxxx'))
+t2 = threading.Thread(target=calistir, args=('192.168.xx.x', 'admin2', 'xxxx'))
+
+t1.start()
+t2.start()

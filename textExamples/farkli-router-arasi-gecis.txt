@@ -1,0 +1,18 @@
+from netmiko import ConnectHandler 
+
+platform = 'cisco_ios'
+host = input('Host adı veya IP girin: ')
+username = input('Kullanıcı Adı girin: ') 
+password = input('Şifre girin: ') 
+komut = " "
+
+device = ConnectHandler(device_type=platform, ip=host, username=username, password=password)
+
+while komut!='x':
+	komut = input('Komut girin: ')
+	output = device.send_command(komut)
+	if (output != None):		
+		print(output)		
+	#else:
+		#print("...")
+#input()
