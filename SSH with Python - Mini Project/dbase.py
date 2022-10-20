@@ -1,0 +1,1 @@
+#veritabanı bağlantısı ile ilgili işlemler
