@@ -18,14 +18,5 @@ with open('fsmout.txt', 'w') as f:
 with open('fsmout.txt', 'w') as outfile:
     outfile.write(' '.join(map(str, output)))
 
-
 print(output)
 input()
-
-#show running-config >> yapılmış tüm konfigürasyonlar
-#show version >> cihaz özellikleri
-# show ip int brief >> interface'lerin ip'leri ve aktif olma durumu
-# show ip route
-
-#önce string'e çevirmemizi istedi liste şeklinde kabul etmedi, sonra map de kullanmamız gerekti,
-# böylece int değerleri de string e çevirdi içindeki o nedenle hata vermişti map yokken
