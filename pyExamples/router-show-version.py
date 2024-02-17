@@ -11,8 +11,6 @@ output = device.send_command('show version')
 print(output)
 input()
 
-#PUTTY KEY EKLEYEREK YAP!!!!!
-
 #show ip int brief >> interface'lerin ip'leri ve aktif olma durumu
 #show running-config >> yapılmış tüm konfigürasyonlar
 #show version >> router özellikleri
