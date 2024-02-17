@@ -1,13 +1,13 @@
 import mysql.connector
 from mysql.connector import Error
 
-# pip install mysql-connector-python ile yüklemeye gerek kalmadı, yüklüymüş zaten
+# pip install mysql-connector-python 
 
 try:
     connection = mysql.connector.connect(host='localhost',
-                                         database='SAKİLA',
-                                         user='root',
-                                         password='root')
+                                         database='',
+                                         user='',
+                                         password='')
     if connection.is_connected():
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
