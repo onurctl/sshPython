@@ -41,15 +41,15 @@ liste text dosyasındaki bilgiler:
 {   
     'device_type': 'cisco_ios',
     'ip':  '192.168.xx.x',
-    'username': 'admin',
-    'password': 'cisco',
+    'username': '',
+    'password': '',
     'port' : 22,    
 },
 {   
     'device_type': 'cisco_ios',
     'ip':  '192.168.xx.x',
-    'username': 'admin2',
-    'password': 'cisco2',
+    'username': '',
+    'password': '',
     'port' : 22,
 },
 """
