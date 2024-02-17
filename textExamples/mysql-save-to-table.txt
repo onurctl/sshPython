@@ -25,5 +25,3 @@ finally:
         connection.close()
         print("MySQL connection is closed")
 
-# output u list e atıp oradan da tek tek elemanalrı dict1 = list[0], dict2 = list[1] alıp db sütunlarına
-# veya json olarak al oradan bu şekilde alıp dict e sonra aktar db ye
