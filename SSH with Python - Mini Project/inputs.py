@@ -1,27 +1,18 @@
-#ana class'ta constructor nesne oluşturmadan çalışmadı ama child class'ta nesnesiz çalıştı?
-
 #gns3
-
-#constructor nesne oluşturulduğu an çalışır o halde bu şekilde çalışmasını beklemek saçma, çalışacağı sınıftan nesne oluşmalı
-
-#inputs un bundan kalitim almasina gerek yok karşılıklı circular hatası veriyor constructor ı main den çalıştırınca ve bir de zaten input main den bir şey almayacak o nedenle gerek yok kalıtıma
 
 import ast
 
 class Inputs():
 
-    #choose one task before the connection -----------------------------------------------------------------
-     
-    #BU CONSTRUCTOR DIYE MI IKIZ KEZ CALISIYOR????
+    #choose one task before the connection     
 
     def getTask(self):
         self.__whatToDo = input("Input one command (for only one router) - 1\n"     
 
-        #private için "__" protected için "_" kullanılır
+        #private için "__" protected için "_"
 
                             +"Simple thread using dicts from text file | json | database - 2\n"
-                            #DB DEN VERI CEKEREK THREAD DE YAPMAYA CALIS VEYA KESINLKLE JSON'DAN DA API DEN CEKEREK YAPILIYORDUR UZAK DB YE BAGLANIP
-                            
+                        
                             +"Send multiple commands (Set router's IP) - 3\n"            
                             +"DHCP Configuration - 4\n"
                             +"Using PuTTY Key Generator - 5\n"
@@ -34,7 +25,7 @@ class Inputs():
     """def getWhatToDo(self):
       return self.__whatToDo"""
 
-    #connection infos ----------------------------------------------------------------
+    #connection infos 
 
     def routerInfo(self, choise):
 
@@ -43,10 +34,6 @@ class Inputs():
           self.__host = input('Hostname or IP: ')
           self.__username = input('Username: ') 
           self.__password = input('Password: ') 
-        
-        #başka bir metot bunun 4 değişkeni de kullanacak ama sadece hedef ip değişkeni farklı eklenecek bir de, command ise yok
-        #bunun için tekrarlı kod yazmaktan bizi kurtaracak bir OOP yapısı olmalı araştır
-        #yoksa overload mı edeceğiz mecbur?
 
         if choise == 'one command':
           self.__command = input ('Command: ')
@@ -78,9 +65,7 @@ class Inputs():
     def getCommand(self):
       return self.__command
 
-    # bunun router sayısı kadar getter i olsun ASLINDA OLMASI GEREKEN ARRAYLIST GIBI BIR SEYE ATMAK 500 ROUTER OLABILIR CUNKU
-
-    #getting router infos for threading ---------------------------------------------------------------
+    #getting router infos for threading 
     
     def getDataForThreading(self, chooseNumber):
 
@@ -91,13 +76,8 @@ class Inputs():
             ios1 = list[0]
             ios2 = list[1]
 
-            #print(ios2) bunları yazdırdık dosyadan çekmesinde bir sorun yok sorun sonrasında
-
             dicts = []
             dicts.append(list[0])
             dicts.append(list[1])
 
-            #print(dicts)
-            #ikisini bir list içine koyup yolla ve indeksle al
-          
             return dicts
