@@ -7,24 +7,14 @@ with open('data.txt', 'r') as file:
 ios1 = list[0]
 ios2 = list[1]
 
-#bunu thread ile yap
-
-#json a çevirdiğinde düzenlenmiş olacak, bunu db ye zaten aktarabiliyoruz 
-#json dosyasından okuma yap zaten yaptı kve dıct olarak aldık ve sonra
-#ondan veriyi al ve dict leri alıp db ye kaydet 1 2 diye seçerek 
-
-#  if item_dict['name'] = keyword: böyle seçebiliriz sanırım her elemanı key i ile 
-# sql = ("INSERT INTO favourite (number, info) VALUES (%s, %s)", (numbers, animals))
-#değişken yazımı insert içinde
-# sql=("INSERT INTO favourite (number, info) VALUES ({},{})".format(numbers,animals))
-#  VALUES ('"+ variable1  +"','"+  variable2+"')" >> BU YAZIMLARDAN UZAK DUR:
-#This is a very dangerous method, because it doesn't escape anything. Hence, if your variable includes any SQL characters, such as ;, it will be interpreted as part of the statement. This means your code is now vulnerable to SQL injection. If your variable1 is populated with ; DROP TABLE favourite;, it would delete the entire table and it's contents. – 
+#json'a çevirdiğinde düzenlenmiş olacak, bunu db ye zaten aktarabiliyoruz 
+#VALUES ('"+ variable1  +"','"+  variable2+"')" >> bad way / injection
 
 try:
         connection = mysql.connector.connect(host='localhost',
-                                         database='sakila',
-                                         user='root',
-                                         password='root')
+                                         database='',
+                                         user='',
+                                         password='')
 
         cursor = connection.cursor()
         mySql_insert_query = """INSERT INTO data (intf, ipaddr, status, proto) 
@@ -44,11 +34,7 @@ finally:
         connection.close()
         print("MySQL bağlantısı sonlandırıldı")
 
-
-
-
 """
-
 import mysql.connector
 from mysql.connector import Error
 
@@ -67,47 +53,3 @@ with open('dict-list.txt', 'r') as file:
     list = ast.literal_eval(f'[{file.read()}]')
 ios1 = list[0]
 ios2 = list[1]
-
-"""ios1 = {
-   
-    'device_type': 'cisco_ios',
-    'ip':   '192.168.50.2',
-    'username': 'admin',
-    'password': 'cisco',
-    'port' : 22,    
-}
-
-ios2 = {
-   
-    'device_type': 'cisco_ios',
-    'ip':   '192.168.50.3',
-    'username': 'admin2',
-    'password': 'cisco2',
-    'port' : 22,    #port 22 ekleyince düzeldi kimlik doğrulama hatası, secret ları da ekle gerekirse
-     
-}"""
-
-def baglan(device_data):
-    net_connect = ConnectHandler(**device_data)
-    output = net_connect.send_command('show ip int brief')
-    print(net_connect.host)
-    print(output)
-
-#parametre probleminin çözümü:
-if __name__ == "__main__":
-    threads = []
-    all_devices = [ios1,ios2]
-    for device in all_devices:
-        # Spawn threads and append to threads list
-        th = threading.Thread(target=baglan, args=(device,))
-        threads.append(th)
-    
-    # iterate through threads list and start each thread to perform its task
-    for thread in threads:
-        thread.start()
-
-    #Once all threads have done the work, join the output of all threads to return the final output.
-    for thread in threads:
-        thread.join()
-
-"""
