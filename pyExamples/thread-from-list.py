@@ -18,7 +18,7 @@ def baglan(device_data):
     net_connect = ConnectHandler(**device_data)
     output = net_connect.send_command('show ip int brief')
     print(net_connect.host)
-    # print("*" * len(net_connect.host)) -- host adının uzunluğu kadar *** koyuyor
+    # print("*" * len(net_connect.host)) 
     print(output)
 
 if __name__ == "__main__":
@@ -40,16 +40,16 @@ if __name__ == "__main__":
 liste text dosyasındaki bilgiler:
 {   
     'device_type': 'cisco_ios',
-    'ip':  '192.168.50.2',
-    'username': 'admin',
-    'password': 'cisco',
+    'ip':  '192.168..',
+    'username': '',
+    'password': '',
     'port' : 22,    
 },
 {   
     'device_type': 'cisco_ios',
-    'ip':  '192.168.50.3',
-    'username': 'admin2',
-    'password': 'cisco2',
+    'ip':  '192.168..',
+    'username': '2',
+    'password': '2',
     'port' : 22,
 },
 """
