@@ -6,26 +6,23 @@ from datetime import datetime
 
 start_time = datetime.now()
 
-#sorunsuz çalışıyor, diğer router a authentication hatası verdi çünkü onun ssh ayarlarını kaydetmemiştik
-
 ios1 = {
     'device_type': 'cisco_ios',
     'ip':   '192.168.xx.x',
-    'username': 'admin',
-    'password': 'cisco',
+    'username': '',
+    'password': '',
     'port' : 22,    
 }
 
-#  'port' : 22,                                 opsiyonel
-#  'secret': 'xxxxxxx',          opsiyonel
+#  'port' : 22, opsiyonel
+#  'secret': 'xxxxxxx', opsiyonel
 
 ios2 = {
     'device_type': 'cisco_ios',
     'ip':   '192.168.xx.x',
-    'username': 'admin2',
-    'password': 'cisco2',
+    'username': '',
+    'password': '',
     'port' : 22,    
-    #port 22 ekleyince düzeldi kimlik doğrulama hatası, secret da ekle gerekirse
 }
 
 def baglan(device_data):
