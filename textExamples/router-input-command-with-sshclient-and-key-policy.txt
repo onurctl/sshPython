@@ -1,11 +1,11 @@
 import paramiko
 ip = "192.168.xx.x"
 kullanici = "admin"
-sifre = "ccccc"
+sifre = ""
 komut = input('Komut girin: ')
 port = 22
 
-# birden çok komut girilmesi için bir deneme:
+#birden çok komut girilmesi için bir deneme:
 
 #durum = True
 #giris = "empty"
@@ -22,15 +22,3 @@ sonuc = stdout.read()
 print(sonuc.decode("utf-8"))
 	  
 ssh.close()
-
-#zaten yan yana tek satırda girilebiliyor tüm komutlar?
-
-#while giris!='exit':
-# if giris=='x':
-	#	durum=False
-	#else:
-"""timeout ve key'i .connect içinden çıkarınca çalışıyor, muhtemelen yukarıda 
-auto add policy olduğundan key kullanımı gerekmiyor?"""
-
-# set_missing_host_key_policy >> eğer bilinen bir key yoksa bunu ekliyoruz
-# putty key kullanırsan bunu kaldırmayı dene, çalışır muhtemelen
