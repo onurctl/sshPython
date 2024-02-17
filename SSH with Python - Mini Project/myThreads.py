@@ -1,9 +1,5 @@
-# --------------
-
 #this class was created because of "function is not defined" error 
 #to use "self" without main function
-
-#BUNU MAIN ICINDE BIR CLASS A KOY BUNA GEREK YOK AYRI CLASS ORADA YAZ
 
 import inputs
 import threading
