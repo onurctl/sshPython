@@ -1,17 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
 
-#json a çevirdiğinde düzenlenmiş olacak, bunu db ye zaten aktarabiliyoruz 
-#json dosyasından okuma yap zaten yaptı kve dıct olarak aldık ve sonra
-#ondan veriyi al ve dict leri alıp db ye kaydet 1 2 diye seçerek BUDUR
-
-#  if item_dict['name'] = keyword: böyle seçebiliriz sanırım her elemanı key i ile 
-# sql = ("INSERT INTO favourite (number, info) VALUES (%s, %s)", (numbers, animals))
-#değişken yazımı insert içinde
-# sql=("INSERT INTO favourite (number, info) VALUES ({},{})".format(numbers,animals))
-#  VALUES ('"+ variable1  +"','"+  variable2+"')" >> BU YAZIMLARDAN UZAK DUR:
-#This is a very dangerous method, because it doesn't escape anything. Hence, if your variable includes any SQL characters, such as ;, it will be interpreted as part of the statement. This means your code is now vulnerable to SQL injection. If your variable1 is populated with ; DROP TABLE favourite;, it would delete the entire table and it's contents. – 
-
 import ast
 with open('dict-list.txt', 'r') as file:
     list = ast.literal_eval(f'[{file.read()}]')
@@ -47,6 +36,3 @@ finally:
     if connection.is_connected():
         connection.close()
         print("MySQL bağlantısı sonlandırıldı")
-
-# output u list e atıp oradan da tek tek elemanalrı dict1 = list[0], dict2 = list[1] alıp db sütunlarına
-# veya json olarak al oradan bu şekilde alıp dict e sonra aktar db ye
