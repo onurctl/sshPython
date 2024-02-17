@@ -1,7 +1,7 @@
 import paramiko
-ip = "192.168.50.2"
-kullanici = "admin"
-sifre = "cisco"
+ip = "192.168.."
+kullanici = ""
+sifre = ""
 komut = input('Komut girin: ')
 port = 22
 
@@ -24,19 +24,17 @@ print(sonuc.decode("utf-8"))
 	  
 ssh.close()
 
+# yan yana tek satırda girilebiliyor tüm komutlar
 
+"""
+ while giris!='exit':
+ 
+ 	if giris=='x':
+		durum=False
+ 	else:
 
-
-
-
-#zaten yan yana tek satırda girilebiliyor tüm komutlar?
-
-#while giris!='exit':
-# if giris=='x':
-	#	durum=False
-	#else:
-"""timeout ve key'i .connect içinden çıkarınca çalışıyor, muhtemelen yukarıda 
-auto add policy olduğundan key kullanımı gerekmiyor?"""
+timeout ve key'i .connect içinden çıkarınca çalışıyor
+muhtemelen yukarıda auto add policy olduğundan key kullanımı gerekmiyor?
+"""
 
 # set_missing_host_key_policy >> eğer bilinen bir key yoksa bunu ekliyoruz
-# putty key kullanırsan bunu kaldırmayı dene, çalışır muhtemelen
