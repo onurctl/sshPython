@@ -3,8 +3,8 @@ import textfsm
 
 platform = 'cisco_ios'
 host = '192.168.xx.x'
-username = 'admin'
-password = 'cisco' 
+username = ''
+password = '' 
 
 device = ConnectHandler(device_type=platform, ip=host, username=username, password=password)
 output = device.send_command('show ip int brief')
@@ -12,8 +12,8 @@ output = device.send_command('show ip int brief')
 print(output)
 
 host = '192.168.xx.x'
-username = 'admin2'
-password = 'cisco2' 
+username = ''
+password = '' 
 
 device = ConnectHandler(device_type=platform, ip=host, username=username, password=password)
 output = device.send_command('show ip int brief')
