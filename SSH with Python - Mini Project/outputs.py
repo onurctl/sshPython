@@ -1,4 +1,4 @@
-#çıktı olarak alınan ve text, json ve/veya veritabanına yazılan veriler
+# çıktı olarak alınan ve text, json ve/veya veritabanına yazılan veriler
 
 import sys
 import json
@@ -16,9 +16,6 @@ class Outputs():
             else: 
                 sys.exit()
                 #os.execl(sys.executable, os.path.abspath(__file__), *sys.argv) 
-    
-            #BUNLARI TRY CATCH ARASINA YAZ DB İŞLEMİ OLMASA DA HATAYI GÖRMEYE YARAR DOĞRU BIR KULLANIM
-            #İŞLEMİN YAPILMADIĞINA DAİR MESAJ VERDİRMİŞ OLURUSN IF ELSE TEKRAR KULLANMADAN KONTROL İÇİN
 
         elif self.__outputOption=='2':
             print(json.dumps(self.__outputWithTextfsm))
@@ -43,5 +40,3 @@ class Outputs():
 
     def setOutputDefault(self, outputDefault):
         self.__outputDefault = outputDefault    
-
-#maindeki çıktıları protected değerlere atalım bu onun subclass ı kalıtımla boylece erişir
