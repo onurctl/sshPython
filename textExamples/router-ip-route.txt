@@ -9,6 +9,6 @@ ios = {
 net_connect =ConnectHandler(**ios)
 net_connect.enable()
 
-config_commands = [ 'conf t', 'ip route 192.168.98.0 255.255.255.0 192.168.100.4 ', 'end', 'show ip route']
+config_commands = [ 'conf t', 'ip route 192.168.. 255.255.255.0 192.168.. ', 'end', 'show ip route']
 output = net_connect.send_config_set(config_commands)
 print (output)
