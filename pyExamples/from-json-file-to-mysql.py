@@ -7,8 +7,6 @@ with open('data.txt', 'r') as file:
 ios1 = list[0]
 ios2 = list[1]
 
-#bunu thread ile yap
-
 try:
         connection = mysql.connector.connect(host='localhost',
                                          database='sakila',
@@ -33,9 +31,6 @@ finally:
         connection.close()
         print("MySQL bağlantısı sonlandırıldı")
 
-
-
-
 """
 
 import threading 
@@ -47,35 +42,34 @@ from datetime import datetime
 
 start_time = datetime.now()
 
-
-#sorunsuz çalışıyor, diğer router a authentication hatası verdi çünkü onun ssh ayarlarını kaydetmemiştik
+#sorunsuz çalışıyor, diğer router'a authentication hatası verdi çünkü onun ssh ayarlarını kaydetmemiştik
 
 ios1 = {
    
     'device_type': 'cisco_ios',
-    'ip':   '192.168.50.2',
-    'username': 'admin',
-    'password': 'cisco',
+    'ip':   '192.168..',
+    'username': '',
+    'password': '',
     'port' : 22,    
 }
 
-#  'port' : 22,                                    opsiyonel
-# 'secret': 'C1sco12345',          opsiyonel
+# 'port' : 22,          opsiyonel
+# 'secret': '',         opsiyonel
 
 ios2 = {
    
     'device_type': 'cisco_ios',
-    'ip':   '192.168.50.3',
-    'username': 'admin2',
-    'password': 'cisco2',
-    'port' : 22,    #port 22 ekleyince düzeldi kimlik doğrulama hatası, secret ları da ekle gerekirse
+    'ip':   '192.168..',
+    'username': '',
+    'password': '',
+    'port' : 22, #port 22 ekleyince düzeldi kimlik doğrulama hatası
 }
 
 def baglan(device_data):
     net_connect = ConnectHandler(**device_data)
     output = net_connect.send_command('show ip int brief')
     print(net_connect.host)
-    #print("*" * len(net_connect.host)) -- host adının uzunluğu kadar *** koyuyor
+    #print("*" * len(net_connect.host)) : host adının uzunluğu kadar *** koyuyor
     print(output)
 
 #parametre probleminin çözümü:
